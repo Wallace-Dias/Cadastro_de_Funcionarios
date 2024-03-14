@@ -23,7 +23,7 @@ while True:
 
         
     if opc == 2:
-        #print(f"Nome: {nome}\nIdade: {idade}\nSalário: R$ {salário:.2f}")
+        print(f"Nome: {nome}\nIdade: {idade}\nSalário: R$ {salário:.2f}")
         
 
 
