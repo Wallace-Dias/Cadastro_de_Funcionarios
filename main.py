@@ -6,8 +6,7 @@ print("="*30)
 #Menu
 print("[1] - Cadastrar\n[2] - Lista de Funcionários\n[3] - Pesquisar\n[4] - Sair")
 print("")
-lista = []
-registro = 1
+
 
 while True:
     opc = int(input("Opção: "))
@@ -19,18 +18,13 @@ while True:
         nome = str(input("Nome: ")).strip().capitalize()
         idade = int(input("Idade: "))
         salário = float(input("Salário: "))
-        funcionario = (nome, idade, salário, registro)
-        lista.append(funcionario)
-        registro += 1
         print("="*30)
         print("")
 
         
     if opc == 2:
         #print(f"Nome: {nome}\nIdade: {idade}\nSalário: R$ {salário:.2f}")
-        for index, funcionario in enumerate(lista, start=1):
-            nome, idade, salário, registro = funcionario
-            print(f"{index}. \nN°:{registro} \nNome:{nome} \nIdade: {idade} \nSalário: R${salário:.2f}")
+        
 
 
         print("="*30)
