@@ -1,4 +1,4 @@
-# Cadastro_de_Funcionarios
+# Cadastro de Funcionários
 
 Um sistema de cadastro de funcionários simples desenvolvido em Python.
 
