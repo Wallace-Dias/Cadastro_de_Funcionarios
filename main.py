@@ -37,7 +37,12 @@ while True:
         print("")
     
     if opc == 3:
+        #Ainda não funciona
         print("Em construção . . .")
+        pesquisa_nome = funcionario.nome
+        if pesquisa_nome == funcionario.nome:
+            print(funcionario)
+            
         print("="*30)
         print("")
 
