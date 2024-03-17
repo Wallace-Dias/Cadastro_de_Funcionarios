@@ -39,9 +39,20 @@ while True:
     if opc == 3:
         #Ainda não funciona
         print("Em construção . . .")
-        pesquisa_nome = funcionario.nome
-        if pesquisa_nome == funcionario.nome:
-            print(funcionario)
+        nome_pesquisa = str(input("Qual o nome do Funcionário?: ")).strip().upper()
+        encontrado = False # para verificar se foi encontrado
+
+        for funcionario in lista:
+            nome, idade, salário, registro = funcionario
+
+            if nome.upper() == nome_pesquisa.upper():
+                print(f"{index}. \nN°:{registro} \nNome:{nome} \nIdade: {idade} \nSalário: R${salário:.2f}")
+                encontrado = True
+                break
+            else:
+                print("Funcionário Não encontrado")
+                encontrado = False
+
             
         print("="*30)
         print("")
