@@ -2,6 +2,7 @@
 
 # ( ) - Armazenar mais de um funcionário em cadastrar
 # ( ) - Adicionar Função de pesquiar
+# ( ) - Adicionar Função de deletar Funcionário
 # ( ) - Completar informações necessárias de funcionários
 # ( ) - Implementar Interface gráfica
 # ( ) - Criar um banco de dados

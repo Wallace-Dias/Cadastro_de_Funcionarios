@@ -1,10 +1,12 @@
 from time import sleep
 
+funcionários = []
+
 print("="*30)
 print("{:^30}".format("Cadastro de Funcionários"))
 print("="*30)
 #Menu
-print("[1] - Cadastrar\n[2] - Lista de Funcionários\n[3] - Pesquisar\n[4] - Sair")
+print("[1] - Cadastrar\n[2] - Lista de Funcionários\n[3] - Pesquisar\n[4] - Deletar Funcionários \n[5] - Sair do Programa")
 print("")
 
 
@@ -19,6 +21,8 @@ while True:
         nome = str(input("Nome: ")).strip().capitalize()
         idade = int(input("Idade: "))
         salário = float(input("Salário: "))
+        funcionário = (nome, idade, salário)
+        funcionários.append(funcionário)
         print("="*30)
         print("")
 
@@ -28,10 +32,10 @@ while True:
         print("="*30)
         print("Lista de Funcionários".center(30))
         print("="*30)
-        print(f"Nome: {nome}\nIdade: {idade}\nSalário: R$ {salário:.2f}")
+        for index, funcionário in enumerate(funcionários, start=1):
+            nome, idade, salário = funcionário
+            print(f"{index}\nNome: {nome}\nIdade: {idade}\nSalário: R$ {salário:.2f}\n")
         
-
-
         print("="*30)
         print("")
     
@@ -40,8 +44,11 @@ while True:
         print("Em construção . . .")
         print("="*30)
         print("")
-
+    
     if opc == 4:
+        print("Em construção. . .")
+
+    if opc == 5:
         # Sair do programa
         print("Saindo . . .")
         sleep(2)
