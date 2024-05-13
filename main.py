@@ -1,5 +1,5 @@
 from time import sleep
-
+n = 0
 funcionários = []
 
 print("="*30)
@@ -42,6 +42,21 @@ while True:
     if opc == 3:
         # Pesquisar
         print("Em construção . . .")
+
+        for index, funcionário in enumerate(funcionários, start=1):
+            nome, idade, salário = funcionário
+            pesq = input("Nome: ")
+
+            if pesq.lower() == nome.lower():
+                print("Encontrado!")
+                print(f"{index}\nNome: {funcionário.nome}\nIdade: {funcionário.idade}\nSalário: R$ {funcionário.salário:.2f}\n")
+                break
+
+            else:
+                print("Funcionário não encontrado ")
+                break
+
+
         print("="*30)
         print("")
     
