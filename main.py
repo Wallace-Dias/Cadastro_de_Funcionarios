@@ -11,15 +11,13 @@ print("")
 
 
 while True:
-    opc = int(input("Opção: "))
+    opc = str(input("Opção: "))
     print("")
     print("="*30)
 
     # Problema em análise
-    if opc not in (1, 2, 3, 4, 5):
-        print("Opção Inválida")
-
-    else:    
+    if opc in '12345':
+        int(opc)
 
         #Cadastrar Funcionários
         if opc == 1:
@@ -82,6 +80,9 @@ while True:
             print("Saindo . . .")
             sleep(2)
             break
+
+    else:
+        print("Opção Inválida")
 
 print("\n")
 print("="*30)
