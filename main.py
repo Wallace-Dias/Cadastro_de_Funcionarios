@@ -11,78 +11,82 @@ print("")
 
 
 while True:
-    opc = str(input("Opção: "))
+    opc = input("Opção: ")
     print("")
     print("="*30)
 
-    # Problema em análise
-    if opc in '12345':
-        int(opc)
-
-        #Cadastrar Funcionários
-        if opc == 1:
-            # Cadastro
-            nome = str(input("Nome: ")).strip().capitalize()
-            idade = int(input("Idade: "))
-            salário = float(input("Salário: "))
-            funcionário = (nome, idade, salário)
-            funcionários.append(funcionário)
-            print("="*30)
-            print("")
-
-            
-        if opc == 2:
-            # Lista de Funcionários
-            print("="*30)
-            print("Lista de Funcionários".center(30))
-            print("="*30)
-            for index, funcionário in enumerate(funcionários, start=1):
-                nome, idade, salário = funcionário
-                print(f"{index}\nNome: {nome}\nIdade: {idade}\nSalário: R$ {salário:.2f}\n")
-            
-            print("="*30)
-            print("")
+    if opc.isdigit():
+        opc = int(opc)
         
-        if opc == 3:
-            # Pesquisar
-            # Em construção . . .
-            if len(funcionários) == 0:
-                print("Nenhum funcionário cadastrado")
-            
-            else:
-                pesq = input("Nome: ")
-                encontrado = False
+        if opc in (1, 2, 3, 4, 5):
 
-                for funcionário in funcionários:
+            #Cadastrar Funcionários
+            if opc == 1:
+                # Cadastro
+                nome = str(input("Nome: ")).strip().capitalize()
+                idade = int(input("Idade: "))
+                salário = float(input("Salário: "))
+                funcionário = (nome, idade, salário)
+                funcionários.append(funcionário)
+                print("="*30)
+                print("")
+
+                
+            if opc == 2:
+                # Lista de Funcionários
+                print("="*30)
+                print("Lista de Funcionários".center(30))
+                print("="*30)
+                for index, funcionário in enumerate(funcionários, start=1):
                     nome, idade, salário = funcionário
-                    
-                    
+                    print(f"{index}\nNome: {nome}\nIdade: {idade}\nSalário: R$ {salário:.2f}\n")
+                
+                print("="*30)
+                print("")
+            
+            if opc == 3:
+                # Pesquisar
+                # Em construção . . .
+                if len(funcionários) == 0:
+                    print("Nenhum funcionário cadastrado")
+                
+                else:
+                    pesq = input("Nome: ")
+                    encontrado = False
 
-                    if pesq.lower() == nome.lower():
-                        print("Encontrado!")
-                        print(f"\nNome: {nome}\nIdade: {idade}\nSalário: R$ {salário:.2f}\n")
-                        encontrado = True
-                        break
+                    for funcionário in funcionários:
+                        nome, idade, salário = funcionário
+                        
+                        
 
-                if not encontrado:
-                    print("Funcionário não encontrado ")
-                    
+                        if pesq.lower() == nome.lower():
+                            print("Encontrado!")
+                            print(f"\nNome: {nome}\nIdade: {idade}\nSalário: R$ {salário:.2f}\n")
+                            encontrado = True
+                            break
+
+                    if not encontrado:
+                        print("Funcionário não encontrado ")
+                        
 
 
-            print("="*30)
-            print("")
-        
-        if opc == 4:
-            print("Em construção. . .")
+                print("="*30)
+                print("")
+            
+            if opc == 4:
+                print("Em construção. . .")
 
-        if opc == 5:
-            # Sair do programa
-            print("Saindo . . .")
-            sleep(2)
-            break
+            if opc == 5:
+                # Sair do programa
+                print("Saindo . . .")
+                sleep(2)
+                break
+
+        else:
+            print("Valor fora do intervalo, tente novamente")
 
     else:
-        print("Opção Inválida")
+        print("Opção Inválida, Tende novamente!")
 
 print("\n")
 print("="*30)
