@@ -1,5 +1,5 @@
 from time import sleep
-n = 0
+
 funcionários = []
 
 print("="*30)
@@ -23,6 +23,8 @@ while True:
             #Cadastrar Funcionários
             if opc == 1:
                 # Cadastro
+                print("Cadastrando Funcionário".center(30))
+                print("="*30)
                 nome = str(input("Nome: ")).strip().capitalize()
                 idade = int(input("Idade: "))
                 salário = float(input("Salário: "))
@@ -40,6 +42,7 @@ while True:
                 for index, funcionário in enumerate(funcionários, start=1):
                     nome, idade, salário = funcionário
                     print(f"{index}\nNome: {nome}\nIdade: {idade}\nSalário: R$ {salário:.2f}\n")
+                    print("="*30)
                 
                 print("="*30)
                 print("")
@@ -47,6 +50,9 @@ while True:
             if opc == 3:
                 # Pesquisar
                 # Em construção . . .
+                print("Pesquisar Funcionário".center(30))
+                print("="*30)
+                
                 if len(funcionários) == 0:
                     print("Nenhum funcionário cadastrado")
                 
@@ -61,7 +67,9 @@ while True:
 
                         if pesq.lower() == nome.lower():
                             print("Encontrado!")
+                            print("="*30)
                             print(f"\nNome: {nome}\nIdade: {idade}\nSalário: R$ {salário:.2f}\n")
+                            print("="*30)
                             encontrado = True
                             break
 
@@ -74,7 +82,44 @@ while True:
                 print("")
             
             if opc == 4:
-                print("Em construção. . .")
+
+                pesq = input("Nome do Funcionário a ser\nexcluído: ")
+                encontrado = False
+                for funcionário in funcionários:
+                    nome, idade, salário = funcionário
+
+                    if pesq.lower() == nome.lower():
+                        print("="*30)
+                        print(f'\nNome: {nome}\nIdade: {idade}\nSalário: R$ {salário: .2f}\n')
+                        print("="*30)
+                        encontrado = True
+
+                        delete = input("Deletar? S/N: ")
+                        print("")
+
+                        if delete in 'sn':
+
+                            if delete.lower() == 's':
+                                funcionários.remove(funcionário)
+
+                            if delete.lower() == 'n':
+                                print("Exclusão cancelada")
+                        else:
+                            print("="*30)
+                            print("Opção inválida!".center(30))
+                            print("="*30)
+                            print("")
+
+                
+                if not encontrado:
+                    print("="*30)
+                    print("Funcionário não encontrado!")
+                    print("="*30)
+
+
+
+
+
 
             if opc == 5:
                 # Sair do programa
@@ -83,10 +128,12 @@ while True:
                 break
 
         else:
-            print("Valor fora do intervalo, tente novamente")
+            print("Valor fora do intervalo, tente\nnovamente")
+            print("="*30)
 
     else:
-        print("Opção Inválida, Tende novamente!")
+        print("Opção Inválida, Tende novamente!".center(30))
+        print("="*30)
 
 print("\n")
 print("="*30)
