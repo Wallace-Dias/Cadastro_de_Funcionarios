@@ -15,59 +15,73 @@ while True:
     print("")
     print("="*30)
 
-    #Cadastrar Funcionários
-    if opc == 1:
-        # Cadastro
-        nome = str(input("Nome: ")).strip().capitalize()
-        idade = int(input("Idade: "))
-        salário = float(input("Salário: "))
-        funcionário = (nome, idade, salário)
-        funcionários.append(funcionário)
-        print("="*30)
-        print("")
+    # Problema em análise
+    if opc not in (1, 2, 3, 4, 5):
+        print("Opção Inválida")
 
+    else:    
+
+        #Cadastrar Funcionários
+        if opc == 1:
+            # Cadastro
+            nome = str(input("Nome: ")).strip().capitalize()
+            idade = int(input("Idade: "))
+            salário = float(input("Salário: "))
+            funcionário = (nome, idade, salário)
+            funcionários.append(funcionário)
+            print("="*30)
+            print("")
+
+            
+        if opc == 2:
+            # Lista de Funcionários
+            print("="*30)
+            print("Lista de Funcionários".center(30))
+            print("="*30)
+            for index, funcionário in enumerate(funcionários, start=1):
+                nome, idade, salário = funcionário
+                print(f"{index}\nNome: {nome}\nIdade: {idade}\nSalário: R$ {salário:.2f}\n")
+            
+            print("="*30)
+            print("")
         
-    if opc == 2:
-        # Lista de Funcionários
-        print("="*30)
-        print("Lista de Funcionários".center(30))
-        print("="*30)
-        for index, funcionário in enumerate(funcionários, start=1):
-            nome, idade, salário = funcionário
-            print(f"{index}\nNome: {nome}\nIdade: {idade}\nSalário: R$ {salário:.2f}\n")
-        
-        print("="*30)
-        print("")
-    
-    if opc == 3:
-        # Pesquisar
-        print("Em construção . . .")
-
-        for index, funcionário in enumerate(funcionários, start=1):
-            nome, idade, salário = funcionário
-            pesq = input("Nome: ")
-
-            if pesq.lower() == nome.lower():
-                print("Encontrado!")
-                print(f"{index}\nNome: {funcionário.nome}\nIdade: {funcionário.idade}\nSalário: R$ {funcionário.salário:.2f}\n")
-                break
-
+        if opc == 3:
+            # Pesquisar
+            # Em construção . . .
+            if len(funcionários) == 0:
+                print("Nenhum funcionário cadastrado")
+            
             else:
-                print("Funcionário não encontrado ")
-                break
+                pesq = input("Nome: ")
+                encontrado = False
+
+                for funcionário in funcionários:
+                    nome, idade, salário = funcionário
+                    
+                    
+
+                    if pesq.lower() == nome.lower():
+                        print("Encontrado!")
+                        print(f"\nNome: {nome}\nIdade: {idade}\nSalário: R$ {salário:.2f}\n")
+                        encontrado = True
+                        break
+
+                if not encontrado:
+                    print("Funcionário não encontrado ")
+                    
 
 
-        print("="*30)
-        print("")
-    
-    if opc == 4:
-        print("Em construção. . .")
+            print("="*30)
+            print("")
+        
+        if opc == 4:
+            print("Em construção. . .")
 
-    if opc == 5:
-        # Sair do programa
-        print("Saindo . . .")
-        sleep(2)
-        break
+        if opc == 5:
+            # Sair do programa
+            print("Saindo . . .")
+            sleep(2)
+            break
 
 print("\n")
 print("="*30)
