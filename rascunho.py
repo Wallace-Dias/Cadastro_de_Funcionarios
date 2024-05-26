@@ -18,4 +18,6 @@ Partes onde é pedido um input para o usuário para escolher uma opção podem a
  """
 
 
-
+import funções
+funcionários = []
+funções.cadastrar_funcionario(funcionários)
