@@ -16,8 +16,3 @@ Partes onde é pedido um input para o usuário para escolher uma opção podem a
 - Colocar um número no lugar do nome, o código aceita apesar de ser um erros
 - Colocar uma letra onde deveria ser a idade ou o salário, isso causara erro, sugiro usar uma verificação com o .isdigit()
  """
-
-
-import funções
-funcionários = []
-funções.cadastrar_funcionario(funcionários)

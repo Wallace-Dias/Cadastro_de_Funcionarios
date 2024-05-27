@@ -1,0 +1,28 @@
+1)
+Explicação do Código
+Importar tkinter:
+
+2)
+Criar a Janela Principal:
+
+root = tk.Tk(): Cria a janela principal.
+root.title("Sistema de Cadastro de Funcionários"): Define o título da janela.
+root.geometry("300x200"): Define o tamanho da janela para 300x200 pixels.
+
+3)
+Adicionar Botões:
+
+tk.Button(root, text="Cadastrar"): Cria um botão com o texto "Cadastrar".
+pack(pady=10): Adiciona o botão à janela e define um espaço (padding) vertical de 10 pixels entre os botões.
+
+4)
+Loop Principal:
+
+root.mainloop(): Inicia o loop principal da aplicação, mantendo a janela aberta e interativa.
+
+Interface Visual
+Cadastrar: Botão para iniciar o cadastro de funcionários.
+Listar: Botão para listar os funcionários cadastrados.
+Pesquisar: Botão para pesquisar por funcionários.
+Deletar: Botão para deletar funcionários.
+Sair: Botão para sair da aplicação.

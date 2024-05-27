@@ -1,5 +1,6 @@
 from time import sleep
 import funções
+#from interface_gráfica import interface
 
 funcionários = []
 
